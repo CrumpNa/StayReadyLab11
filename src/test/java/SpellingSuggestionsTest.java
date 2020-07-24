@@ -65,7 +65,7 @@ public class SpellingSuggestionsTest {
     public void pluralizeTest(){ //adds s to end of a word
         String name= "Naja";
         //given
-        String expected= "Naj";
+        String expected= "Najas";
         //then
         String actual=spellingSuggestions.pluralize(name);
         //when
