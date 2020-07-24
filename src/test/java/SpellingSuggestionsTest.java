@@ -39,26 +39,34 @@ public class SpellingSuggestionsTest {
     @Test
     public void changeLetterTest(){ // to change any letter from indices 1-one before last index (not first or last)
         //given
+        String name= "Naja";
+        String expected= "Nala";
         //then
+       String actual=spellingSuggestions.changeLetter(name);
         //when
-
+        Assert.assertTrue(expected.matches(actual));
     }
 
     @Test
-    public void insertLetterTest(){ //
+    public void insertLetterTest(){
         //given
+        String name= "Naja";
+        String expected="Naqja";
         //then
+        String actual= spellingSuggestions.insertLetter(name);
         //when
-
+        Assert.assertTrue(expected.matches(actual));
     }
 
     @Test
     public void swapTwoLettersTest(){ //swap neighboring letters
         //given
-
+        String name="Gatorade";
+        String expected="Gaotrade";
         //then
+        String actual=spellingSuggestions.swapTwoLetters(name);
         //when
-
+        Assert.assertTrue(expected.matches(actual));
     }
 
     @Test
