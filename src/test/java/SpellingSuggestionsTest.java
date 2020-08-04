@@ -8,18 +8,19 @@ import java.util.Scanner;
 
 public class SpellingSuggestionsTest {
     SpellingSuggestions spellingSuggestions; //iniitalize the class instance
+    SpellChecker spellChecker; //use this to call the file and the functions in this class
     @Before
     public void setUp(){
         this.spellingSuggestions= new SpellingSuggestions();//set up the object, assigns obj to
     }
 
     @Test
-    public void deleteFLTest(){ //FL= first letter
-        String name= "Naja";
+    public void deleteFLTest() throws FileNotFoundException { //FL= first letter
+        String file=spellChecker.dictionarySetUp();  //call file "Naja";
         //given
-        String expected= "aja";
+        String expected= "ear";
         //then
-        String actual=spellingSuggestions.deleteFL(name);
+        String actual=spellingSuggestions.deleteFL(file);
         //when
         Assert.assertTrue(expected.matches(actual));
 
